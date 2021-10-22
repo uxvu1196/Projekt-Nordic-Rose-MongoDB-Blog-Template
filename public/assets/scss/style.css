@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Poppins:wght@500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /*====================VARIABLES========================*/
 * {
   margin: 0;
@@ -53,5 +53,89 @@ nav ul li {
 nav ul #active {
   border-bottom: solid #000;
   border-bottom-width: medium;
+}
+
+/*======================FOOTER=====================*/
+footer {
+  background: #000;
+  color: white;
+  padding-top: 2%;
+}
+
+footer .works {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .works li {
+  font-family: "Fira Code";
+  font-weight: 300;
+  font-size: 1.3em;
+}
+
+footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer div .logoWhite {
+  margin-top: 7%;
+  margin-bottom: 3%;
+}
+
+footer div div .lorem {
+  width: 40%;
+  text-align: center;
+  padding-bottom: 2%;
+  font-family: "Poppins", sans-serif;
+}
+
+footer div div .linksSm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 6%;
+  width: 17vw;
+}
+
+footer div div .linksSm li {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+}
+
+footer div div .linksSm li a {
+  font-family: "Fira Code";
+  font-weight: 500;
+  color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+}
+
+footer div div .copyright {
+  font-family: "Fira Code";
+  text-align: center;
+  padding-bottom: 5%;
 }
 /*# sourceMappingURL=style.css.map */

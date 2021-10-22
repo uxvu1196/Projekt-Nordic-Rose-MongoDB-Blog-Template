@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Poppins:wght@500;900&display=swap"); //FONTS: Poppins (500,900) Fira Code (500)
-/*====================VARIABLES========================*/
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"); /*====================VARIABLES========================*/
 $headline: 900;
 $text: 500;
 $article: "Fira Code";
+$pLine: "Poppins", sans-serif;
 //====================GENREAL STYLE===================
 * {
     margin: 0;
@@ -37,6 +37,70 @@ nav {
         #active {
             border-bottom: solid #000;
             border-bottom-width: medium;
+        }
+    }
+}
+/*======================FOOTER=====================*/
+footer {
+    background: #000;
+    color: white;
+    padding-top: 2%;
+
+    .works {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            font-family: $article;
+            font-weight: 300;
+            font-size: 1.3em;
+        }
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        .logoWhite {
+            margin-top: 7%;
+            margin-bottom: 3%;
+        }
+
+        div {
+            .lorem {
+                width: 40%;
+                text-align: center;
+                padding-bottom: 2%;
+                font-family: $pLine;
+            }
+
+            .linksSm {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 6%;
+                width: 17vw;
+                li {
+                    // padding-right: 10%;
+                    justify-content: space-between;
+                    text-align: center;
+
+                    a {
+                        font-family: $article;
+                        font-weight: 500;
+                        color: white;
+                        text-decoration: underline;
+                        text-decoration-thickness: 0.5px;
+                    }
+                }
+            }
+
+            .copyright {
+                font-family: $article;
+                text-align: center;
+                padding-bottom: 5%;
+            }
         }
     }
 }
