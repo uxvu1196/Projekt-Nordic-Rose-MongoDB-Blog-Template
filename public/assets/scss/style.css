@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Poppins:wght@500;900&display=swap");
+/*====================VARIABLES========================*/
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins";
+  font-size: 500;
+}
+
+a {
+  color: #000;
+}
+
+/*======================NAVBAR=====================*/
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 1% 0;
+}
+
+nav #logo {
+  width: 15%;
+  padding-left: 7%;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 10%;
+  width: 20vh;
+}
+
+nav ul li {
+  padding-bottom: 20%;
+}
+
+nav ul #active {
+  border-bottom: solid #000;
+  border-bottom-width: medium;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Poppins:wght@500;900&display=swap"); //FONTS: Poppins (500,900) Fira Code (500)
+/*====================VARIABLES========================*/
+$headline: 900;
+$text: 500;
+$article: "Fira Code";
+//====================GENREAL STYLE===================
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins";
+    font-size: $text;
+}
+a {
+    color: #000;
+}
+/*======================NAVBAR=====================*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1% 0;
+    #logo {
+        width: 15%;
+        padding-left: 7%;
+    }
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 10%;
+        width: 20vh;
+        li {
+            padding-bottom: 20%;
+        }
+        #active {
+            border-bottom: solid #000;
+            border-bottom-width: medium;
+        }
+    }
+}
