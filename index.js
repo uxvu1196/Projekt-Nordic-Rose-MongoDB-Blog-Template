@@ -60,3 +60,12 @@ app.get('/add', (req, res) => {
         .catch(err => console.log(err))
 
 })
+
+//=====================CRUD======================================================
+app.post('/new', (req, res) => { //POST METHOD
+    console.log(req.body)
+    let newblog = new blog(req.body)
+    newblog.save()
+        .then(result => res.redirect(`/add`))
+        .catch(err => console.log(err))
+})

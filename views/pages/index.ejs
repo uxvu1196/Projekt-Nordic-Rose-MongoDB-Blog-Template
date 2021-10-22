@@ -17,7 +17,45 @@
             <li><a href="/add">NEW ARTICLE</a></li>
         </ul>
     </nav>
-    <h1></h1>
+
+    <main>
+        <section id="hero">
+
+            <img src=<%=`../../assets/img${results[0].url}` %> alt="">
+            <article>
+                <h1>
+                    <%= results[0].title %>
+                </h1>
+            </article>
+        </section>
+
+        <section id="allArticles">
+            <h2>
+                All articles
+            </h2>
+            <section class="grid2">
+                <% results.forEach(elt=> { %>
+                    <% if (elt.id!=0) { %>
+                        <div>
+                            <% if (elt.id<=12) { %>
+                                <img src=<%=`../../assets/img${elt.url}` %> alt="">
+                                <% } else { %>
+                                    <img src=<%=`${elt.url}` %> alt="">
+                                    <% } %>
+
+                                        <article>
+                                            <p class="IndexTitle">
+                                                <%= elt.title %>
+                                            </p>
+                                        </article>
+                                        <% } %>
+                        </div>
+                        <% }) %>
+
+            </section>
+        </section>
+    </main>
+
     <%- include ("../partials/footer.ejs") %>
         <!-- partial = Stück, Teil -->
 </body>

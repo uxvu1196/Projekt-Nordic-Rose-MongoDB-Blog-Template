@@ -40,6 +40,41 @@ nav {
         }
     }
 }
+
+/*======================MAIN PAGE/INDES.EJS=============================*/
+#hero {
+    text-align: center;
+    margin: 3% 0 5% 0;
+    article {
+        display: flex;
+        justify-content: center;
+    }
+    h1 {
+        font-size: 3em;
+        width: 60vw;
+        margin: 3% 0 1% 0;
+    }
+}
+#allArticles {
+    border-top: 3px solid #000;
+    margin: 0 25%;
+    text-align: center;
+    .grid2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    article {
+        p {
+            width: 80%;
+        }
+    }
+    h2 {
+        font-size: 2.5em;
+        text-align: center;
+        margin: 6% 0 5% 0;
+    }
+}
+
 /*======================FOOTER=====================*/
 footer {
     background: #000;

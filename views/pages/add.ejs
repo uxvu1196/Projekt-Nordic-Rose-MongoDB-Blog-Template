@@ -17,7 +17,21 @@
             <li id="active"><a href="/add">NEW ARTICLE</a></li>
         </ul>
     </nav>
-    <h1>add</h1>
+    <section class="add_form">
+        <h1>ADD NEW ARTICLE</h1>
+        <form action="/new" method="POST">
+            <input type="number" name="_id" id="" placeholder="_id">
+            <input type="number" name="id" placeholder="id">
+            <input type="text" name="title" placeholder="Title">
+            <input type="text" name="url" id="" placeholder="url">
+            <input type="text" name="author" placeholder="Author">
+            <input type="text" name="body" id="body" placeholder="Article">
+            <input type="number" name="duration" id="" placeholder="Duration">
+            <input type="date" name="published_at" id="" placeholder="published at">
+            <input type="text" name="author_bild" placeholder="author_bild">
+            <input type="submit" value="SEND ARTICLE">
+        </form>
+    </section>
 </body>
 
 </html>
