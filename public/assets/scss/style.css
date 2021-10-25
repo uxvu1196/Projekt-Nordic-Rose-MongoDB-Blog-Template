@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /*====================VARIABLES========================*/
 * {
@@ -7,6 +8,7 @@
   list-style: none;
   font-family: "Poppins";
   font-size: 500;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -28,7 +30,7 @@ nav {
 }
 
 nav #logo {
-  width: 15%;
+  width: 65%;
   padding-left: 7%;
 }
 
@@ -53,6 +55,196 @@ nav ul li {
 nav ul #active {
   border-bottom: solid #000;
   border-bottom-width: medium;
+}
+
+/*======================ALL=============================*/
+#hero {
+  text-align: center;
+  margin: 3% 0 5% 0;
+  width: 100%;
+}
+
+#hero article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#hero h1 {
+  font-size: 3em;
+  width: 60vw;
+  margin: 3% 0 1% 0;
+}
+
+#allArticles {
+  border-top: 3px solid #000;
+  margin: 0 30%;
+  text-align: center;
+}
+
+#allArticles .grid2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 1%;
+  margin-bottom: 25%;
+}
+
+#allArticles .grid2 img {
+  width: 80%;
+}
+
+#allArticles article p {
+  width: 80%;
+  margin: 0 auto;
+  font-family: Fira Code;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+#allArticles h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin: 6% 0 5% 0;
+}
+
+/*======================ADD========================*/
+#addHeadline {
+  text-align: center;
+  font-weight: 400;
+  font-size: 2em;
+  margin: 2% 0 0 0;
+}
+
+#stripe {
+  width: 45px;
+  height: 4px;
+  margin: 1.5% auto 1% auto;
+  background-color: #000;
+}
+
+form {
+  width: 100%;
+  margin: 4% 0;
+}
+
+form input {
+  background-color: #e5e5e5;
+  color: black;
+  font-family: "Open Sans";
+  display: block;
+  width: 90%;
+  margin: 1% 4%;
+  border: none;
+  padding: 2% 1%;
+}
+
+form input[type="submit"] {
+  background-color: black;
+  color: white;
+  width: 92%;
+  font-size: 1em;
+  border-radius: 12px;
+  padding: 0.5% 1%;
+  cursor: pointer;
+}
+
+form #body {
+  padding: 1% 1% 12.6% 1%;
+}
+
+/*===================DETAIL========================*/
+.contentTitle {
+  margin: 3% 20% 5% 20%;
+  text-align: center;
+  font-weight: 900;
+  font-size: 4em;
+}
+
+.imgContainer {
+  width: 100%;
+}
+
+.imgContainer img {
+  width: 100%;
+}
+
+.contentPost {
+  margin: 3% 20% 10% 20%;
+}
+
+.contentPost .blogHeader {
+  border-top: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5%;
+}
+
+.contentPost .blogHeader .authorPic {
+  border-radius: 50%;
+  width: 7%;
+  margin: 1% 5% 1% 1%;
+}
+
+.contentPost .blogHeader div h5 {
+  font-family: Fira Code;
+  font-weight: 700;
+  font-size: 1.3em;
+  margin: 0 0 2% 0;
+}
+
+.contentPost .blogHeader div h6 {
+  font-family: Fira Code;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.contentPost div p {
+  font-size: 1.6em;
+}
+
+/*=============What to Read next===================*/
+#whatNext {
+  border-top: 3px solid #000000;
+  text-align: center;
+}
+
+#whatNext .grid3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  row-gap: 3%;
+  margin-bottom: 15%;
+}
+
+#whatNext .grid3 img {
+  width: 80%;
+}
+
+#whatNext article p {
+  width: 80%;
+  margin: 0 auto;
+  font-family: Fira Code;
+  font-weight: 500;
+  font-size: 1.7em;
+}
+
+#whatNext h2 {
+  font-size: 3.5em;
+  text-align: center;
+  margin: 6% 0 5% 0;
 }
 
 /*======================FOOTER=====================*/
@@ -137,5 +329,348 @@ footer div div .copyright {
   font-family: "Fira Code";
   text-align: center;
   padding-bottom: 5%;
+}
+
+/*========================MEDIA QUERRIES=================*/
+@media only screen and (max-width: 600px) {
+  /*======================600pxNAVBAR=====================*/
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    padding: 1% 0;
+  }
+  nav #logo {
+    width: 55%;
+    padding-left: 7%;
+  }
+  nav #burgerMenu {
+    display: block;
+    margin-right: 5%;
+  }
+  .hide {
+    display: none;
+  }
+  /*=============================MENÜ=====================*/
+  .overlay {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+  }
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 3em;
+    margin: 10% 0;
+    color: #818181;
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #f1f1f1;
+  }
+  .overlay .closebtn {
+    position: absolute;
+    top: -7%;
+    right: 4%;
+    font-size: 60px;
+  }
+  #burgerMenu {
+    display: none;
+  }
+  /*======================600pxALL=============================*/
+  #hero {
+    text-align: center;
+    margin: 3% 0 0% 0;
+  }
+  #hero img {
+    width: 100%;
+  }
+  #hero article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #hero h1 {
+    font-size: 1.8em;
+    width: 95vw;
+    margin: 13% 0 23% 0;
+  }
+  #allArticles {
+    border-top: 3px solid #000;
+    margin: 0 0%;
+    text-align: center;
+  }
+  #allArticles .grid2 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    gap: 1%;
+    margin-bottom: 125%;
+  }
+  #allArticles .grid2 img {
+    width: 80%;
+  }
+  #allArticles article p {
+    width: 100%;
+    margin: 0 0;
+    font-family: Fira Code;
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+  #allArticles h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 6% 0 5% 0;
+  }
+  /*======================600pxADD========================*/
+  #addHeadline {
+    text-align: center;
+    font-weight: 400;
+    font-size: 2em;
+    margin: 22% 0 0 0;
+  }
+  #stripe {
+    width: 45px;
+    height: 4px;
+    margin: 1.5% auto 1% auto;
+    background-color: #000;
+  }
+  form {
+    width: 100%;
+    margin: 4% 0;
+  }
+  form input {
+    background-color: #e5e5e5;
+    color: black;
+    font-family: "Open Sans";
+    display: block;
+    width: 90%;
+    margin: 5% 4%;
+    border: none;
+    padding: 4% 1%;
+  }
+  form input[type="submit"] {
+    background-color: black;
+    color: white;
+    width: 92%;
+    font-size: 1em;
+    border-radius: 8px;
+    padding: 5.5% 1%;
+    cursor: pointer;
+  }
+  form #body {
+    padding: 1% 1% 30% 1%;
+  }
+  /*===================600pxDETAIL========================*/
+  .contentTitle {
+    margin: 23% 1% 25% 1%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.5em;
+  }
+  .imgContainer {
+    width: 100%;
+  }
+  .imgContainer img {
+    width: 100%;
+  }
+  .contentPost {
+    margin: 3% 3% 10% 3%;
+  }
+  .contentPost .blogHeader {
+    margin-bottom: 25%;
+    padding-top: 5%;
+  }
+  .contentPost .blogHeader .authorPic {
+    width: 17%;
+    margin: 1% 5% 1% 1%;
+  }
+  .contentPost div p {
+    font-size: 1.2em;
+  }
+  /*=============600pxWhat to Read next===================*/
+  #whatNext {
+    border-top: 3px solid #000000;
+    margin-bottom: 100%;
+    text-align: center;
+  }
+  #whatNext .grid3 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    row-gap: 3%;
+    margin-bottom: 15%;
+  }
+  #whatNext .grid3 img {
+    width: 95%;
+  }
+  #whatNext article p {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Fira Code;
+    font-weight: 500;
+    font-size: 1.7em;
+  }
+  #whatNext h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 16% 0 5% 0;
+  }
+  /*======================600pxFOOTER=====================*/
+  footer {
+    background: #000;
+    color: white;
+    padding-top: 2%;
+  }
+  footer .works {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: baseline;
+        -ms-flex-pack: baseline;
+            justify-content: baseline;
+    width: 200%;
+    padding-top: 5%;
+  }
+  footer .works li {
+    font-family: "Fira Code";
+    font-weight: 100;
+    font-size: 1em;
+    width: 100%;
+  }
+  footer .works .hide {
+    display: none;
+  }
+  footer div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer div .logoWhite {
+    margin-top: 17%;
+    margin-bottom: 13%;
+  }
+  footer div div .lorem {
+    width: 80%;
+    text-align: center;
+    padding-bottom: 2%;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8em;
+  }
+  footer div div .linksSm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 6%;
+    width: 60vw;
+    margin: 5% 0;
+  }
+  footer div div .linksSm li {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: center;
+  }
+  footer div div .linksSm li a {
+    font-weight: 500;
+    text-decoration: none;
+  }
+  footer div div .copyright {
+    font-size: 0.7em;
+  }
+}
+
+/*=============================MENÜ=====================*/
+.overlay {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 3em;
+  margin: 10% 0;
+  color: #818181;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: -7%;
+  right: 4%;
+  font-size: 60px;
+}
+
+#burgerMenu {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

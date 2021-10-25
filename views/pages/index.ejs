@@ -11,24 +11,47 @@
 
 <body>
     <nav>
-        <img src="/assets/img/logo.svg" alt="" id="logo">
-        <ul>
+        <a href="/"><img src="/assets/img/logo.svg" alt="" id="logo"></a>
+        <ul class="hide">
             <li id="active"><a href="/">ALL</a></li>
             <li><a href="/add">NEW ARTICLE</a></li>
         </ul>
+        <span id="burgerMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
     </nav>
+    <!-- overlayMenü -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- times ist das x um den Hamburger zu schließen -->
+        <div class="overlay-content">
+            <a href="/">All</a>
+            <a href="/add">NEW ARTICLE</a>
 
+        </div>
+
+        <!-- Funktionen für das Overlay Menü -->
+        <script>
+            function openNav() {
+                document.getElementById("myNav").style.width = "100vw";
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+        <!-- overlayMenü -->
+    </div>
     <main>
-        <section id="hero">
+        <a href="/detail/0">
+            <section id="hero">
 
-            <img src=<%=`../../assets/img${results[0].url}` %> alt="">
-            <article>
-                <h1>
-                    <%= results[0].title %>
-                </h1>
-            </article>
-        </section>
-
+                <img src=<%=`../../assets/img${results[0].url}` %> alt="">
+                <article>
+                    <h1>
+                        <%= results[0].title %>
+                    </h1>
+                </article>
+            </section>
+        </a>
         <section id="allArticles">
             <h2>
                 All articles
@@ -36,28 +59,29 @@
             <section class="grid2">
                 <% results.forEach(elt=> { %>
                     <% if (elt.id!=0) { %>
-                        <div>
-                            <% if (elt.id<=12) { %>
-                                <img src=<%=`../../assets/img${elt.url}` %> alt="">
-                                <% } else { %>
-                                    <img src=<%=`${elt.url}` %> alt="">
-                                    <% } %>
 
-                                        <article>
-                                            <p class="IndexTitle">
-                                                <%= elt.title %>
-                                            </p>
-                                        </article>
+                        <a href=<%=`/detail/${elt.id}`%> >
+                            <div>
+                                <% if (elt.id<=12) { %>
+                                    <img src=<%=`../../assets/img${elt.url}` %> alt="">
+                                    <% } else { %>
+                                        <img src=<%=`${elt.url}` %> alt="">
                                         <% } %>
-                        </div>
+
+                                            <article>
+                                                <p class="IndexTitle">
+                                                    <%= elt.title %>
+                                                </p>
+                                            </article>
+                                            <% } %>
+                            </div>
+                        </a>
                         <% }) %>
 
             </section>
         </section>
     </main>
-
-    <%- include ("../partials/footer.ejs") %>
-        <!-- partial = Stück, Teil -->
+    <%- include ('../partials/footer.ejs') %>
 </body>
 
 </html>

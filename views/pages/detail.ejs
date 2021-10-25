@@ -5,11 +5,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nordic Rose</title>
+    <link rel="stylesheet" href="/assets/scss/style.css">
 </head>
 
 <body>
-    <h1>Hello world!</h1>
+    <nav>
+        <a href="/"><img src="/assets/img/logo.svg" alt="" id="logo"></a>
+        <ul class="hide">
+            <li><a href="/">ALL</a></li>
+            <li><a href="/add">NEW ARTICLE</a></li>
+        </ul>
+        <span id="burgerMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+        <!-- rauskopiert vom Internet -->
+    </nav>
+    <!-- overlayMenü -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- times ist das x um den Hamburger zu schließen -->
+
+        <div class="overlay-content">
+            <a href="/">All</a>
+            <a href="/add">NEW ARTICLE</a>
+        </div>
+
+        <!-- Funktionen für das Overlay Menü -->
+        <!-- <script src=""></script> und dann den Pfad, so importiert man JS Funktionen  -->
+        <script>
+            function openNav() {
+                document.getElementById("myNav").style.width = "100vw";
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+        <!-- overlayMenü -->
+    </div>
+
+    <h1 class="contentTitle">
+        <%= content.title %>
+            content ist ein Objekt und ich möchte vom Objekt den Titel haben - siehe content auf index.js, es hat was
+            mit blog zu tun
+    </h1>
+
+    <div class="imgContainer">
+        <% if (content.id<=12) { %>
+            <img src=<%=`../../assets/img${content.url}` %> alt="">
+            <% } else { %>
+                <img src=<%=`${content.url}` %> alt="">
+                <% } %>
+    </div>
+
+    <article class="contentPost">
+        <div class="blogHeader">
+
+            <img class="authorPic" src=<%=content.author_bild %> alt="">
+            <div>
+                <h5>
+                    <%= content.author %>
+                </h5>
+                <h6>
+                    <%= content.published_at %> •
+                        <%= content.duration %>min read
+
+                </h6>
+            </div>
+        </div>
+        <div>
+            <p>
+                <%= content.body %>
+            </p>
+        </div>
+    </article>
+
+
+    <section id="whatNext">
+        <h2>What to read next</h2>
+        <section class="grid3">
+            <% results.forEach(elt=> { %>
+                <% if (1<=elt.id&&elt.id<=6) { %>
+                    <a href=<%=`/detail/${elt.id}`%>>
+                        <div>
+                            <% if (elt.id<=12) { %>
+                                <img src=<%=`../../assets/img${elt.url}` %> alt="">
+                                <% } else { %>
+                                    <img src=<%=`${elt.url}` %> alt="">
+                                    <% } %>
+                                        <article>
+                                            <p>
+                                                <%= elt.title %>
+                                            </p>
+                                        </article>
+                                        <% } %>
+                        </div>
+                    </a>
+                    <% }) %>
+        </section>
+    </section>
+    <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>

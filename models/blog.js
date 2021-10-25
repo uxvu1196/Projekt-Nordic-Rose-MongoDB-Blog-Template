@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// durch mongoose weiß es, dass es auf der Datenbank ist das Schmea, schau bei Atlas MongoDB nach
 const Schema = mongoose.Schema;
 //const {Schema}=mongoose
 

@@ -11,27 +11,89 @@
 
 <body>
     <nav>
-        <img src="/assets/img/logo.svg" alt="" id="logo">
-        <ul>
+        <a href="/"><img src="/assets/img/logo.svg" alt="" id="logo"></a>
+        <ul class="hide">
             <li><a href="/">ALL</a></li>
             <li id="active"><a href="/add">NEW ARTICLE</a></li>
         </ul>
+        <span id="burgerMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
     </nav>
+    <!-- overlayMenü -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- times ist das x um den Hamburger zu schließen -->
+
+        <div class="overlay-content">
+            <a href="/">All</a>
+            <a href="/add">NEW ARTICLE</a>
+
+        </div>
+
+        <!-- Funktionen für das Overlay Menü -->
+        <script>
+            function openNav() {
+                document.getElementById("myNav").style.width = "100vw";
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+        <!-- overlayMenü -->
+    </div>
     <section class="add_form">
-        <h1>ADD NEW ARTICLE</h1>
+        <h1 id="addHeadline">ADD NEW ARTICLE</h1>
+        <div id='stripe'></div>
+
         <form action="/new" method="POST">
-            <input type="number" name="_id" id="" placeholder="_id">
-            <input type="number" name="id" placeholder="id">
+            <input type="hidden" name="id" placeholder="id" value="<%=response%>">
             <input type="text" name="title" placeholder="Title">
-            <input type="text" name="url" id="" placeholder="url">
+            <input type="text" name="url" id="" placeholder="Url Picture">
             <input type="text" name="author" placeholder="Author">
-            <input type="text" name="body" id="body" placeholder="Article">
-            <input type="number" name="duration" id="" placeholder="Duration">
-            <input type="date" name="published_at" id="" placeholder="published at">
-            <input type="text" name="author_bild" placeholder="author_bild">
+            <input type="text" name="body" id="body" placeholder="Write your article here....">
+            <input type="hidden" name="duration" id="" placeholder="Duration" value="<%=3%>">
+            <input type="hidden" name="published_at" id="date" placeholder="published at"
+                value="<%=new Date().toLocaleDateString('de-DE')%>">
+            <input type="hidden" name="author_bild" placeholder="author_bild"
+                value="https://source.unsplash.com/random/100x100">
             <input type="submit" value="SEND ARTICLE">
         </form>
     </section>
+    <section id="whatNext">
+        <h2>What to read next</h2>
+        <section class="grid3">
+            <% results.forEach(elt=> { %>
+                <% if (1<=elt.id&&elt.id<=6) { %>
+                    <!-- Es soll mir nur die Elemente mit der 1 bis 6 anzeigen -->
+                    <a href=<%=`/detail/${elt.id}`%>>
+                        <!-- das generiert einen Link, der zum Detailpage vom Element führt  -->
+                        <div>
+                            <% if (elt.id<=12) { %>
+                                <!-- alles was unter 12 oder gleich ist -->
+                                <img src=<%=`../../assets/img${elt.url}` %> alt="">
+                                <!-- damit url auch Links annimmt, weil es nach 12 nichts mehr gibt -->
+                                <% } else { %>
+                                    <img src=<%=`${elt.url}` %> alt="">
+                                    <% } %>
+                                        <article>
+                                            <p>
+                                                <%= elt.title %>
+                                            </p>
+                                            <!-- damit der aticle unten angezeigt wird -->
+                                        </article>
+                                        <% } %>
+                        </div>
+                    </a>
+                    <% }) %>
+
+                        <!-- loop, if und else damit kannst du nur ejs schreiben -->
+
+        </section>
+    </section>
+    <%- include('../partials/footer.ejs') %>
+        <!-- Hier wurde der footer hinzugefügt -->
 </body>
 
 </html>
+
+<!-- < % werte von JS zu html schicken, mit dem Zeichen kann man erst js schreiben -->
