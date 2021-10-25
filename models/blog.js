@@ -5,11 +5,7 @@ const Schema = mongoose.Schema;
 
 const blogSchema = new Schema({
     // Diese id wird von Mogno automatisch selber beim Collection in Datebase Deployment vergeben, sie ist unique 
-    _id: {
-        type: Number,
-        required: true,
-    },
-    // Da kann man eine ID vergeben
+
     id: {
         type: Number,
         required: true,
